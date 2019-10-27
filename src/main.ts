@@ -1,16 +1,22 @@
 import cheerio from "cheerio";
 import fetch from "node-fetch";
+import { getDays } from "./scraps";
 
-fetch("http://sumo.or.jp/EnHonbashoMain/torikumi/1/15").then(async response => {
+async function bootstrap() {
+  const response = await fetch(
+    "http://sumo.or.jp/EnHonbashoMain/torikumi/1/15"
+  );
   const html = await response.text();
   const $ = cheerio.load(html);
   const mainSection = $(".mdSection1");
 
-  const tournament = mainSection.find(".mdDate");
-  const dateList = mainSection.find(".mdNav1");
-  const divisons = mainSection.find(".mdNav2");
+  const days = getDays(mainSection);
 
-  const results = mainSection.find(".mdTable1");
+  // const tournament = mainSection.find(".mdDate");
+  // const dateList = mainSection.find(".mdNav1");
+  // const divisons = mainSection.find(".mdNav2");
 
-  console.log(dateList);
-});
+  // const results = mainSection.find(".mdTable1");
+}
+
+bootstrap();

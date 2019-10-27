@@ -14,14 +14,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const cheerio_1 = __importDefault(require("cheerio"));
 const node_fetch_1 = __importDefault(require("node-fetch"));
-node_fetch_1.default("http://sumo.or.jp/EnHonbashoMain/torikumi/1/15").then((response) => __awaiter(void 0, void 0, void 0, function* () {
-    const html = yield response.text();
-    const $ = cheerio_1.default.load(html);
-    const mainSection = $(".mdSection1");
-    const tournament = mainSection.find(".mdDate");
-    const dateList = mainSection.find(".mdNav1");
-    const divisons = mainSection.find(".mdNav2");
-    const results = mainSection.find(".mdTable1");
-    console.log(dateList);
-}));
+const scraps_1 = require("./scraps");
+function bootstrap() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const response = yield node_fetch_1.default("http://sumo.or.jp/EnHonbashoMain/torikumi/1/15");
+        const html = yield response.text();
+        const $ = cheerio_1.default.load(html);
+        const mainSection = $(".mdSection1");
+        const days = scraps_1.getDays(mainSection);
+        // const tournament = mainSection.find(".mdDate");
+        // const dateList = mainSection.find(".mdNav1");
+        // const divisons = mainSection.find(".mdNav2");
+        // const results = mainSection.find(".mdTable1");
+    });
+}
+bootstrap();
 //# sourceMappingURL=main.js.map

@@ -17,11 +17,11 @@ const node_fetch_1 = __importDefault(require("node-fetch"));
 const scraps_1 = require("./scraps");
 function bootstrap() {
     return __awaiter(this, void 0, void 0, function* () {
-        const response = yield node_fetch_1.default("http://sumo.or.jp/EnHonbashoMain/torikumi/1/15");
+        const response = yield node_fetch_1.default("http://sumo.or.jp/EnHonbashoMain/torikumi/1/1");
         const html = yield response.text();
         const $ = cheerio_1.default.load(html);
         const mainSection = $(".mdSection1");
-        const days = scraps_1.getDays(mainSection);
+        const days = scraps_1.getTournamentInfo(mainSection);
         // const tournament = mainSection.find(".mdDate");
         // const dateList = mainSection.find(".mdNav1");
         // const divisons = mainSection.find(".mdNav2");

@@ -1,1 +1,1 @@
-{"version":3,"file":"scrap-days.js","sourceRoot":"","sources":["../../src/scraps/scrap-days.ts"],"names":[],"mappings":";;AAAa,QAAA,OAAO,GAAG,CAAC,OAAgB,EAAE,EAAE;IAC1C,OAAO,CAAC,GAAG,CAAC,OAAO,CAAC,CAAC;AACvB,CAAC,CAAC"}
+{"version":3,"file":"scrap-days.js","sourceRoot":"","sources":["../../src/scraps/scrap-days.ts"],"names":[],"mappings":";;AAAA,MAAM,QAAQ,GAAW,SAAS,CAAC;AAEtB,QAAA,OAAO,GAAG,CAAC,OAAgB,EAAE,EAAE;IAC1C,OAAO,OAAO,CAAC,IAAI,CAAC,QAAQ,CAAC,CAAC,QAAQ,EAAE,CAAC,MAAM,CAAC;AAClD,CAAC,CAAC"}

@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "tsc && node dist/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,7 +18,12 @@
   },
   "homepage": "https://github.com/danielsimao/dohyo#readme",
   "dependencies": {
+    "@types/cheerio": "^0.22.13",
     "cheerio": "^1.0.0-rc.3",
     "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.4"
   }
 }
